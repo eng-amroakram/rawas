@@ -1,0 +1,47 @@
+<?php
+
+return [
+    'Welcome' => 'Welcome',
+    'projects' => 'Projects',
+    'projects_list' => 'Projects List',
+    'list' => 'List',
+    'create' => 'Create',
+    'change_password' => 'Change Password',
+    'edit' => 'Edit',
+    'Sign in with credentials' => 'Sign in with credentials',
+    'E-Mail Address' => 'E-Mail Address',
+    'Password' => 'Password',
+    'Remember my login' => 'Remember my login' ,
+    'Submit' => 'Submit',
+    'Login' => 'Login',
+    'login_message' => 'Manage You Website',
+    'old_password' => 'Current Password',
+    'Change Password' => 'Change Password',
+    'Return Back' =>   'Return Back',
+    'save' => 'Save',
+    'users' => 'Users',
+    'Old Password is invalid' =>'Old Password is invalid',
+    'update_Successfully' => 'Update Successfuly',
+    'created_Successfully' => 'Craeted Successfuly',
+    'deleted_Successfully' => 'Deleted Successfuly',
+    'dashboard' => 'Dashboard',
+    'profile' => 'Profile',
+    'Account' => 'Account',
+
+    //clients
+    'clients' => 'Clients',
+    'client' => 'Client',
+    'show' => 'Show',
+    'contacts' => 'Contacts',
+    'services' => 'Services',
+    'Service' => 'Service',
+
+    'HERO_SECTION' => 'Hero Section',
+    'ABOUT_US' => 'About Us',
+    'OUR_WORK' => 'Our Work',
+    'OUR_SERVICE' => 'Our Service',
+    'OUR_CLIENTS' => 'Our Clients',
+    'FOOTER' => 'Footer',
+    'GENERAL_SETTINGS' => 'General Settings',
+
+];
