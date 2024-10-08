@@ -67,7 +67,7 @@
                 <div class="row align-items-center">
                     <div class="col-xl-2 col-lg-4 col-md-3 col-6">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="{{ route('frontend.index') }}">
                                 <img data-width="115" src="{{ $settings['GENERAL_SETTINGS']['logo'] }}" alt="">
                             </a>
                         </div>
