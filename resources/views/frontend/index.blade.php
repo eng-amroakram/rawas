@@ -565,7 +565,8 @@
                                         {{-- <li><a href="project-1.html"><i class="fa-sharp fa-solid fa-plus"></i>
                                                 المدونة</a>
                                         </li> --}}
-                                        <li><a href="contact.html"><i class="fa-sharp fa-solid fa-plus"></i> اتصل
+                                        <li><a href="{{ route('frontend.contact') }}"><i
+                                                    class="fa-sharp fa-solid fa-plus"></i> اتصل
                                                 بنا</a></li>
                                     </ul>
                                 </div>

@@ -68,8 +68,7 @@
                     <div class="col-xl-2 col-lg-4 col-md-3 col-6">
                         <div class="logo">
                             <a href="index.html">
-                                <img data-width="115" src="{{ asset('assets/img/logo/logo-white.png') }}"
-                                    alt="">
+                                <img data-width="115" src="{{ $settings['GENERAL_SETTINGS']['logo'] }}" alt="">
                             </a>
                         </div>
                     </div>
@@ -84,7 +83,7 @@
                                     <li><a href="#about-one-page">تعرف علينا</a></li>
                                     <li><a href="#project-one-page">مشاريعنا</a></li>
                                     <li><a href="#price-one-page">خدماتنا</a></li>
-                                    <li><a href="#blog-one-page">المدونة</a></li>
+                                    {{-- <li><a href="#blog-one-page">المدونة</a></li> --}}
                                 </ul>
                             </nav>
                         </div>
@@ -99,7 +98,8 @@
                                     </div>
                                     <div class="tp-header-4-contact-content">
                                         <span>معكم بكل وقت</span>
-                                        <a href="tel:0123456789">+966 (576) 8765</a>
+                                        <a
+                                            href="tel:0123456789">{{ $settings['GENERAL_SETTINGS']['phone_number'] }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -272,14 +272,14 @@
                                 data-wow-delay=".4s">
                                 <div class="tp-footer-widget-logo mb-15">
                                     <a href="index.html">
-                                        <img src="{{ asset('assets/img/logo/logo-black.png') }}" alt="fw-logo">
+                                        <img src="{{ $settings['FOOTER']['logo'] }}" alt="fw-logo">
                                     </a>
                                 </div>
                                 <div class="tp-footer-widget-content">
 
-                                    <p>نص تجريبي لنبذة عن المؤسسة يكتب هنا نص تجريبي لتفاصيل التعريف بالمؤسسة يكتب هنا
+                                    <p>
+                                        {{ $settings['FOOTER']['description_ar'] }}
                                     </p>
-
 
                                 </div>
                             </div>
@@ -294,10 +294,11 @@
                                                 علينا</a></li>
                                         <li><a href="blog.html"><i class="fa-sharp fa-solid fa-plus"></i> مشاريعنا</a>
                                         </li>
-                                        <li><a href="project-1.html"><i class="fa-sharp fa-solid fa-plus"></i>
-                                                المدونة</a>
+                                        {{-- <li><a href="project-1.html"><i class="fa-sharp fa-solid fa-plus"></i>
+                                                المدونة</a> --}}
                                         </li>
-                                        <li><a href="contact.html"><i class="fa-sharp fa-solid fa-plus"></i> اتصل
+                                        <li><a href="{{ route('frontend.contact') }}"><i
+                                                    class="fa-sharp fa-solid fa-plus"></i> اتصل
                                                 بنا</a></li>
                                     </ul>
                                 </div>
@@ -316,9 +317,8 @@
                                 <div class="tp-footer-widget-content-list">
 
                                     <div class="tp-footer-widget-content-list-item">
-                                        <i class="fa-solid fa-square-phone"></i><a href="tel:0123456789">+966 566
-                                            (9098)
-                                            98765</a>
+                                        <i class="fa-solid fa-square-phone"></i><a
+                                            href="tel:0123456789">{{ $settings['GENERAL_SETTINGS']['phone_number'] }}</a>
                                     </div>
                                     <div class="tp-footer-widget-content-list-item">
                                         <i class="fa-solid fa-envelope"></i> <a
@@ -327,8 +327,8 @@
                                                 data-cfemail="b9cddcdac3d6dfdfd0dad8d0d5d8f9ded4d8d0d597dad6d4">[email&#160;protected]</span></a>
                                     </div>
                                     <div class="tp-footer-widget-content-list-item">
-                                        <i class="fa-solid fa-location-dot"></i> <a href="#">المملكة العربية
-                                            السعوية - جدة- حي الرويس
+                                        <i class="fa-solid fa-location-dot"></i> <a href="#">
+                                            {{ $settings['FOOTER']['location'] }}
                                         </a>
                                     </div>
                                 </div>
@@ -343,7 +343,7 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-7">
                             <div class="tp-footer-copyright">
-                                <span>جميع الحقوق محفوظة لمؤسسة رواس 2024 </span>
+                                <span>{{ $settings['FOOTER']['copyright_text_ar'] }}</span>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-5">
