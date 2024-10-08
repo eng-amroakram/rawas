@@ -417,7 +417,7 @@
                 <div class="row">
 
                     @if (isset($services[0]))
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-lg-3 col-6">
                             <div class="tp-services-5 mb-40">
                                 <div class="tp-services-5-icon mb-25">
                                     <i class="flaticon-consultant"></i>
@@ -435,7 +435,7 @@
 
 
                     @if (isset($services[1]))
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-lg-3 col-6">
                             <div class="tp-services-5 mb-40">
                                 <div class="tp-services-5-icon mb-25">
                                     <i class="flaticon-coding"></i>
@@ -453,7 +453,7 @@
 
 
                     @if (isset($services[2]))
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-lg-3 col-6">
                             <div class="tp-services-5 mb-40">
                                 <div class="tp-services-5-icon mb-25">
                                     <i class="flaticon-advertisig-agency"></i>
@@ -470,7 +470,7 @@
                     @endif
 
                     @if (isset($services[3]))
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-lg-3 col-6">
                             <div class="tp-services-5 mb-40">
                                 <div class="tp-services-5-icon mb-25">
                                     <i class="flaticon-solution"></i>
