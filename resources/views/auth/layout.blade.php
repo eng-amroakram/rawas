@@ -69,7 +69,7 @@
                         <span class="nav-link-inner--text">Register</span>
                     </a>
                 </li>
-                @endif 
+                @endif
             </ul>
             @endguest --}}
 

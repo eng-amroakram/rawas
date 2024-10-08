@@ -50,10 +50,8 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>{{ __('labels.backend.users.fields.name') }}</th>
-                                <th>{{ __('labels.backend.users.fields.email') }}</th>
-                                <th>{{ __('labels.backend.users.fields.status') }}</th>
-                                <th>{{ __('labels.backend.users.fields.roles') }}</th>
+                                <th>{{ __('labels.backend.projects.fields.title') }}</th>
+                                <th>{{ __('labels.backend.projects.fields.sub_title') }}</th>
                                 <th class="text-right">{{ __('labels.backend.action') }}</th>
                             </tr>
                         </thead>
@@ -100,9 +98,7 @@
         columns: [
             {data: 'id', name: 'id'},
             {data: 'title', name: 'title'},
-            {data: 'email', name: 'email'},
-            {data: 'status', name: 'status'},
-            {data: 'user_roles', name: 'user_roles'},
+            {data: 'sub_title', name: 'sub_title'},
             {data: 'action', name: 'action', orderable: false, searchable: false}
         ]
     });

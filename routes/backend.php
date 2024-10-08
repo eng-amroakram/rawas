@@ -7,6 +7,7 @@
 * --------------------------------------------------------------------
 */
 
+use App\Http\Controllers\Backend\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'backend.', 'middleware' => ['auth', 'can:view_backend']], function () {
@@ -60,6 +61,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'backend.',
     $controller_name = 'ProjectController';
     Route::get("$module_name/index_data", ['as' => "$module_name.index_data", 'uses' => "$controller_name@index_data"]);
     Route::get("$module_name/index_list", ['as' => "$module_name.index_list", 'uses' => "$controller_name@index_list"]);
+    Route::get("$module_name/works/{project}", [ProjectController::class, 'works'])->name('projects.works');
     Route::resource("$module_name", "$controller_name");
 
 

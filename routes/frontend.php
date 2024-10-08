@@ -16,6 +16,7 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.'], function () {
     // Route::view(trans('routes.about'), 'about')->name('page.about');
 
     Route::get('/', [FrontendController::class, 'index'])->name('index');
+    Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
     // Route::get('home', 'FrontendController@index')->name('home');
     // Route::get('privacy', 'FrontendController@privacy')->name('privacy');
     // Route::get('terms', 'FrontendController@terms')->name('terms');

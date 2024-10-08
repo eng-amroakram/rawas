@@ -75,4 +75,10 @@ class FrontendController extends Controller
         $body_class = '';
         return view('frontend.terms', compact('body_class'));
     }
+
+    public function contact()
+    {
+        $body_class = '';
+        return view('frontend.contact', compact('body_class'));
+    }
 }

@@ -11,11 +11,12 @@
 |
 */
 
-use App\Http\Controllers\Frontend\FrontendController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-Route::get('/', [FrontendController::class, 'index'])->name('index');
+
+// frontend Routes
+require __DIR__ . '/frontend.php';
 
 Route::group( //start LOCALIZED Routes
     [
@@ -28,8 +29,6 @@ Route::group( //start LOCALIZED Routes
         // Auth Routes
         require __DIR__ . '/auth.php';
 
-        // frontend Routes
-        require __DIR__ . '/frontend.php';
 
         // backend Routes
         require __DIR__ . '/backend.php';

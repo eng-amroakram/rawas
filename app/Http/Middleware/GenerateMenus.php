@@ -95,19 +95,19 @@ class GenerateMenus
                 ]);
 
 
-            // // Projects
-            // $menu->add('<i class="c-sidebar-nav-icon fas fa-sitemap"></i>' . trans('oa_menues.backend.sidebar.projects') , [
-            //     'route' => 'backend.projects.index',
-            //     'class' => 'c-sidebar-nav-item',
-            // ])
-            // ->data([
-            //     'order'         => 99,
-            //     'activematches' => 'admin/projects*',
-            //     'permission'    => [],
-            // ])
-            // ->link->attr([
-            //     'class' => 'c-sidebar-nav-link',
-            // ]);
+            // Projects
+            $menu->add('<i class="c-sidebar-nav-icon fas fa-sitemap"></i>' . trans('oa_menues.backend.sidebar.projects'), [
+                'route' => 'backend.projects.index',
+                'class' => 'c-sidebar-nav-item',
+            ])
+                ->data([
+                    'order'         => 99,
+                    'activematches' => 'admin/projects*',
+                    'permission'    => [],
+                ])
+                ->link->attr([
+                    'class' => 'c-sidebar-nav-link',
+                ]);
 
             // Notifications
             // $menu->add('<i class="c-sidebar-nav-icon fas fa-bell"></i>' . trans('oa_menues.backend.sidebar.notifications') , [

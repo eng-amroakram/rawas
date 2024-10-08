@@ -52,6 +52,12 @@ class ProjectController extends Controller
         $this->module_model = "App\Models\Project";
     }
 
+
+    public function works(Project $project)
+    {
+        dd($project);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -92,27 +98,18 @@ class ProjectController extends Controller
 
         $module_action = 'List';
 
-        $$module_name = $module_model::select('id', 'title', 'sub_title', 'description', 'image', 'updated_at');
+        $$module_name = $module_model::select('id', 'title', 'sub_title', 'updated_at');
 
         $data = $$module_name;
 
-        return Datatables::of($$module_name)
+        return Datatables::of(Project::select('id', 'title', 'sub_title', 'updated_at'))
             ->addColumn('action', function ($data) {
                 $module_name = $this->module_name;
 
-                return view('backend.includes.user_actions', compact('module_name', 'data'));
+                return view('backend.includes.project_actions', compact('module_name', 'data'));
             })
-            ->addColumn('user_roles', function ($data) {
-                $module_name = $this->module_name;
-
-                return view('backend.includes.user_roles', compact('module_name', 'data'));
-            })
-            ->editColumn('name', '<strong>{{$name}}</strong>')
-            ->editColumn('status', function ($data) {
-                $return_data = $data->status_label;
-                $return_data .= '<br>' . $data->confirmed_label;
-
-                return $return_data;
+            ->addColumn('name', function ($row) {
+                return $row->name;
             })
             ->editColumn('updated_at', function ($data) {
                 $module_name = $this->module_name;
@@ -125,7 +122,7 @@ class ProjectController extends Controller
                     return $data->updated_at->isoFormat('LLLL');
                 }
             })
-            ->rawColumns(['title', 'sub_title', 'image', 'description'])
+            ->rawColumns(['title', 'sub_title'])
             ->orderColumns(['id'], '-:column $1')
             ->make(true);
     }
@@ -208,18 +205,30 @@ class ProjectController extends Controller
 
         $module_action = 'Details';
 
+        $request['description'] = $request->includes;
+        $request['images'] = $request->featured_images;
+
         $data = $request->validate([
             'title' => ['required'],
             'sub_title' => ['required'],
             'description' => ['required'],
             'image' => ['required', 'file', 'mimes:png,jpg,jpeg'],
+            // 'images' => ['required', 'array'],
         ]);
-
-        dd($data);
 
         if (isset($data['image']) && is_file($data['image'])) {
             $data['image'] = FileHelper::uploadFile($data['image'], 'projects');
         }
+
+        // if (isset($data['images'])) {
+        //     foreach ($data['images'] as $index => $image) {
+        //         if (is_file($image)) {
+        //             $data['images'][$index] = FileHelper::uploadFile($image, 'projects/images');
+        //         }
+        //     }
+        // }
+
+        // dd($data);
 
         Project::create($data);
         Flash::success('<i class="fas fa-check"></i> ' . __('response.created_Successfully'))->important();

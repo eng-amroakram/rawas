@@ -25,7 +25,7 @@
 		2.3 Buttons
 		2.4 Animations
 		2.5 Preloader
-		2.6 Background 
+		2.6 Background
 		2.7 Carousel
 		2.8 Nice Select
 		2.9 Pagination
@@ -121,7 +121,7 @@
 }
 body{
   overflow-x: hidden;
-  
+
     font-family: ArbFONTS-ExpoArabic-Light !important;
 }
 
@@ -130,7 +130,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 h4,h5,h6{
-	
+
 	font-family: ArbFONTS-ExpoArabic-SemiBold !important
 }
 p{ font-family: ArbFONTS-ExpoArabic-Light !important}
@@ -225,11 +225,11 @@ p{ font-family: ArbFONTS-ExpoArabic-Light !important}
 }
 
 /*---------------------------------
-	typography css start 
+	typography css start
 ---------------------------------*/
 body {
-  
- 
+
+
     font-family: ArbFONTS-ExpoArabic-Light !important;
   font-size: 14px;
   font-weight: normal;
@@ -551,7 +551,7 @@ div.demo img {
 }
 
 /*----------------------------------------
-    Body Overlay 
+    Body Overlay
 -----------------------------------------*/
 .body-overlay {
   background-color: var(--tp-common-black);
@@ -1096,7 +1096,7 @@ div.demo img {
   display: inline-block;
   font-weight: 700;
   font-size: 16px;
-  background-color: var(--tp-theme-primary);
+  background-color: #CC9C76;
   padding: 17px 51px;
   color: var(--tp-common-white);
   position: relative;
@@ -2234,6 +2234,7 @@ div.demo img {
   background-position: 100% 100%, 0 90%;
   background-repeat: no-repeat;
   transition: background-size 0.4s linear;
+  font-size:22px;
 }
 .under-line-white a:hover {
   color: var(--tp-common-white);
@@ -3288,8 +3289,8 @@ div.demo img {
 /*----------------------------------------*/
 .breadcrumb-wrap {
   position: relative;
-  padding-top: 175px;
-  padding-bottom: 170px;
+  padding-top: 125px;
+  padding-bottom: 120px;
   z-index: 10;
   overflow: hidden;
 }
@@ -3300,7 +3301,7 @@ div.demo img {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #03020a;
+  background-color: #393895;
   z-index: -1;
 }
 .breadcrumb-bg {
@@ -3756,7 +3757,7 @@ div.demo img {
   border-radius: 50%;
 }
 .tp-section-title {
-  font-size: 40px;
+  font-size: 34px;
   color: var(--tp-theme-secondary);
   font-weight: 700;
   line-height: 1.25;
@@ -5693,7 +5694,7 @@ body .ui-tooltip {
   right: 0;
   width: 100%;
   z-index: 9;
-  
+
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px), only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .tp-header-transparent {
@@ -6047,7 +6048,7 @@ body .ui-tooltip {
   }
 }
 .tp-header-4 .offcanvas-open-btn i {
-  background-color: var(--tp-theme-4);
+  background-color:#393895;
   height: 50px;
   width: 50px;
   line-height: 50px;
@@ -7477,13 +7478,20 @@ body .ui-tooltip {
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .tp-banner-5-title {
-    font-size: 70px;
+    font-size: 65px;
   }
 }
 @media (max-width: 767px) {
   .tp-banner-5-title {
-    font-size: 48px;
+    font-size: 40px;
+	margin-top: 45px;
+	text-align: center;
   }
+
+  .header-p{
+	 	text-align: center;
+  }
+
 }
 .tp-banner-5-btn {
   flex: 0 0 auto;
@@ -7542,7 +7550,47 @@ body .ui-tooltip {
 @media (max-width: 767px) {
   .tp-banner-5-info {
     flex-wrap: wrap;
+	display: block !important;
+        text-align: center;
   }
+
+  .tp-banner-5-video{
+
+	  	display: block !important;
+        text-align: center;
+  }
+  .tp-banner-5-thumb{
+	  display:none;
+  }
+  .tp-section-title{        font-size: 22px;}
+
+  .tp-project-4-prv, .tp-project-4-nxt{
+	      height: 45px !important;
+    width: 45px !important;
+    line-height: 50px !important;
+  }
+  .tp-section-red{
+	  margin-bottom: 45px !important;
+  }
+  .tp-project-5-wrap{
+	  padding:0px !important;
+  }
+  .swiper-slide{
+	  width:100% !important;
+  }
+
+  .tp-services-5-content p{ display:none;}
+
+  .tp-services-5-title{
+	  font-size:20px !important;
+	  text-align:center;
+  }
+  .tp-services-5 {
+    text-align: center;
+}
+.swiper-slide{
+	width:50% !important;
+}
 }
 
 /*----------------------------------------*/
@@ -13330,7 +13378,7 @@ blockquote cite::before {
   display: inline-block;
 }
 .tp-project-4-prv i:hover, .tp-project-4-nxt i:hover {
- 
+
   color: var(--tp-common-white);
 }
 
@@ -14277,6 +14325,7 @@ blockquote cite::before {
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {
   .tp-benifits-5-thumb {
     margin-bottom: 60px;
+	display:none;
   }
 }
 @media (max-width: 767px) {
@@ -14829,7 +14878,7 @@ blockquote cite::before {
   }
 }
 .tp-contact-details-form {
-  border-top: 8px solid var(--tp-theme-primary);
+  border-top: 8px solid #393895;
   padding-top: 30px;
 }
 .tp-contact-details-form-input {
@@ -14838,14 +14887,14 @@ blockquote cite::before {
 .tp-contact-details-form-input input, .tp-contact-details-form-input textarea {
   font-size: 16px;
   color: #b0aec3;
-  padding-left: 45px;
+  padding-right: 45px;
   color: var(--tp-theme-4);
   border: transparent;
   height: 60px;
   background-color: var(--tp-grey-2);
 }
 .tp-contact-details-form-input input:focus, .tp-contact-details-form-input textarea:focus {
-  border: 1px solid var(--tp-theme-primary);
+  border: 1px solid #393895;
 }
 .tp-contact-details-form-input input::placeholder, .tp-contact-details-form-input textarea::placeholder {
   font-size: 16px;
@@ -14858,7 +14907,7 @@ blockquote cite::before {
 .tp-contact-details-form-input span {
   position: absolute;
   top: 17px;
-  left: 20px;
+  right: 20px;
   color: var(--tp-theme-4);
   font-size: 16px;
 }
