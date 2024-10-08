@@ -271,7 +271,7 @@
                             <div class="tp-footer-widget footer-col-1 mb-40 wow fadeInUp" data-wow-duration=".8s"
                                 data-wow-delay=".4s">
                                 <div class="tp-footer-widget-logo mb-15">
-                                    <a href="index.html">
+                                    <a href="{{ route('frontend.index') }}">
                                         <img src="{{ $settings['FOOTER']['logo'] }}" alt="fw-logo">
                                     </a>
                                 </div>
