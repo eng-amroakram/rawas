@@ -104,7 +104,7 @@
                                 </div>
                             </div>
                             <div class="tp-header-btn ml-30 d-none d-lg-block">
-                                <a class="tp-btn-red" href="contact.html">سجل اهتمامك </a>
+                                <a class="tp-btn-red" href="{{ route('frontend.contact') }}">سجل اهتمامك </a>
                             </div>
                             <div class="offcanvas-btn d-xl-none ml-20">
                                 <button class="offcanvas-open-btn"><i class="fa-solid fa-bars"></i></button>

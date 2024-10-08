@@ -106,7 +106,7 @@
                                 </div>
                             </div>
                             <div class="tp-header-btn ml-30 d-none d-lg-block">
-                                <a class="tp-btn-red" href="contact.html">سجل اهتمامك </a>
+                                <a class="tp-btn-red" href="{{ route('frontend.contact') }}">سجل اهتمامك </a>
                             </div>
                             <div class="offcanvas-btn d-xl-none ml-20">
                                 <button class="offcanvas-open-btn"><i class="fa-solid fa-bars"></i></button>
@@ -182,7 +182,7 @@
                             <div class="tp-banner-5-info d-flex align-items-center wow fadeInUp"
                                 data-wow-duration="1.6s" data-wow-delay=".9s">
                                 <div class="tp-banner-5-btn">
-                                    <a class="tp-btn-red" href="about.html">سجل اهتمامك </a>
+                                    <a class="tp-btn-red" href="{{ route('frontend.contact') }}">سجل اهتمامك </a>
                                 </div>
                                 <div class="tp-banner-5-video d-flex align-items-center">
                                     <a class="popup-video" href="https://www.youtube.com/watch?v=tUP5S4YdEJo"><i
