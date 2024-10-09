@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Partner;
+use App\Models\Project;
 use App\Models\Service;
 use App\Models\Setting;
 
@@ -49,9 +50,9 @@ class FrontendController extends Controller
 
         $services = Service::get(['name', 'description'])->toArray();
         $partners = Partner::get(['image'])->toArray();
+        $projects = Project::select(['id', 'title', 'sub_title', 'image'])->get();
 
-
-        return view('frontend.index', compact('body_class', 'settings', 'services', 'partners'));
+        return view('frontend.index', compact('body_class', 'settings', 'services', 'partners', 'projects'));
     }
 
     /**

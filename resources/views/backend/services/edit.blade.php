@@ -48,6 +48,9 @@
                         </div>
                     </div>
 
+
+
+
                     <div class="form-group row">
                         {{ html()->label(__('labels.backend.services.fields.description'))->class('col-sm-2 form-control-label')->for('description') }}
 
@@ -76,7 +79,6 @@
                                 {{ html()->submit($text = icon('fas fa-save') . ' ' . __('response.save'))->class('btn btn-success') }}
                             </div>
                         </div>
-
                     </div>
                     {{ html()->closeModelForm() }}
                 </div>

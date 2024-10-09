@@ -127,7 +127,7 @@
 
         <!-- project-area-start -->
         <section id="project-one-page" class="project-area tp-project-4 pb-50">
-            <div class="tp-project-4-bg" data-background="{{ asset('assets/img/project/four/1.jpg') }}"></div>
+            <div class="tp-project-4-bg" data-background="{{ asset('assets/img/project/five/1.jpg') }}"></div>
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-xl-5 col-lg-6 col-md-8">
@@ -146,85 +146,37 @@
                     </div>
                 </div>
             </div>
-            <div class="tp-project-5-wrap">
 
+
+            <div class="tp-project-5-wrap">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="tp-project-4-wrapper">
                                 <div class="swiper-container tp-project-4-active">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <div class="tp-project-4-item">
-                                                <div class="tp-project-4-item-thumb tp-thumb-common">
-                                                    <div class="tp-thumb-common-overlay-red wow"></div>
-                                                    <img src="{{ asset('assets/img/project/four/4.png') }}" alt="">
-                                                </div>
-                                                <div class="tp-project-4-item-content">
-                                                    <span>تغطية</span>
-                                                    <h4 class="tp-project-4-title under-line-white"><a
-                                                            href="project-details.html">المؤتمرات والفعاليات </a></h4>
-                                                </div>
-                                                <div class="tp-project-4-arrow">
-                                                    <a href="project-details.html"><i
-                                                            class="fa-regular fa-arrow-right"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-project-4-item">
-                                                <div class="tp-project-4-item-thumb tp-thumb-common">
-                                                    <div class="tp-thumb-common-overlay-red wow"></div>
-                                                    <img src="{{ asset('assets/img/project/four/1.jpg') }}"
-                                                        alt="">
-                                                </div>
-                                                <div class="tp-project-4-item-content">
-                                                    <span>الانتاج المرئي </span>
-                                                    <h4 class="tp-project-4-title under-line-white"><a
-                                                            href="project-details.html">تصوير الفيديو</a></h4>
-                                                </div>
-                                                <div class="tp-project-4-arrow">
-                                                    <a href="project-details.html"><i
-                                                            class="fa-regular fa-arrow-right"></i></a>
+
+                                        @foreach ($projects as $project)
+                                            <div class="swiper-slide">
+                                                <div class="tp-project-4-item">
+                                                    <div class="tp-project-4-item-thumb tp-thumb-common">
+                                                        <div class="tp-thumb-common-overlay-red wow"></div>
+                                                        <img src="{{ asset('storage/' . $project->image) }}"
+                                                            alt="">
+                                                    </div>
+                                                    <div class="tp-project-4-item-content">
+                                                        <span>{{ $project->sub_title }}</span>
+                                                        <h4 class="tp-project-4-title under-line-white"><a
+                                                                href="project-details.html">{{ $project->title }}</a></h4>
+                                                    </div>
+                                                    <div class="tp-project-4-arrow">
+                                                        <a href="project-details.html"><i
+                                                                class="fa-regular fa-arrow-right"></i></a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-project-4-item">
-                                                <div class="tp-project-4-item-thumb tp-thumb-common">
-                                                    <div class="tp-thumb-common-overlay-red wow"></div>
-                                                    <img src="{{ asset('assets/img/project/four/2.jpg') }}"
-                                                        alt="">
-                                                </div>
-                                                <div class="tp-project-4-item-content">
-                                                    <span>العلامات التجارية</span>
-                                                    <h4 class="tp-project-4-title under-line-white"><a
-                                                            href="project-details.html">تصميم والمونتاج</a></h4>
-                                                </div>
-                                                <div class="tp-project-4-arrow">
-                                                    <a href="project-details.html"><i
-                                                            class="fa-regular fa-arrow-right"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <div class="tp-project-4-item">
-                                                <div class="tp-project-4-item-thumb tp-thumb-common">
-                                                    <div class="tp-thumb-common-overlay-red wow"></div>
-                                                    <img src="{{ asset('assets/img/project/four/3.png') }}"
-                                                        alt="">
-                                                </div>
-                                                <div class="tp-project-4-item-content">
-                                                    <span>االتسويق</span>
-                                                    <h4 class="tp-project-4-title under-line-white"><a
-                                                            href="project-details.html">الحملات الدعائية</a></h4>
-                                                </div>
-                                                <div class="tp-project-4-arrow">
-                                                    <a href="project-details.html"><i
-                                                            class="fa-regular fa-arrow-right"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        @endforeach
+
                                     </div>
                                 </div>
                             </div>

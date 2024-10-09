@@ -59,6 +59,8 @@
             </div>
             <!--/.row-->
         </div>
+
+
         <div class="card-footer">
             <div class="row">
                 <div class="col">
@@ -69,5 +71,7 @@
                 </div>
             </div>
         </div>
+
+
     </div>
 @endsection

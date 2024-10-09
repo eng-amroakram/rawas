@@ -1,7 +1,7 @@
 <div class="text-right">
     <a href="{{route('backend.projects.show', $data)}}" class="btn btn-success btn-sm mt-1" data-toggle="tooltip" title="{{__('labels.backend.show')}}"><i class="fas fa-eye"></i></a>
     <a href="{{route('backend.projects.edit', $data)}}" class="btn btn-primary btn-sm mt-1" data-toggle="tooltip" title="{{__('labels.backend.edit')}}"><i class="fas fa-edit"></i></a>
-    <a href="{{route('backend.projects.works', $data)}}" class="btn btn-primary btn-sm mt-1" data-toggle="tooltip" title="{{__('labels.backend.works')}}"><i class="fas fa-edit"></i></a>
+    <a target="_blank" href="{{route('backend.projects.works', $data)}}" class="btn btn-secondary btn-sm mt-1" data-toggle="tooltip" title="{{__('labels.backend.works')}}"><i class="fas fa-briefcase"></i></a>
     <button
     type="submit"
     form="delete_item_{{ $data }}"

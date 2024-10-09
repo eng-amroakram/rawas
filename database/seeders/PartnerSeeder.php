@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Partner;
+use App\Models\Project;
 use Illuminate\Database\Seeder;
 
 class PartnerSeeder extends Seeder
@@ -49,6 +50,40 @@ class PartnerSeeder extends Seeder
             ],
 
         ];
+
+        $projects = [
+            [
+                'title' => 'المؤتمرات والفعاليات',
+                'sub_title' => 'تغطية',
+                'image' => 'projects/4.png'
+            ],
+            [
+                'title' => 'الحملات الدعائية',
+                'sub_title' => 'التسويق',
+                'image' => 'projects/3.png'
+            ],
+            [
+                'title' => 'تصميم والمونتاج',
+                'sub_title' => 'العلامات التجارية',
+                'image' => 'projects/2.jpg'
+            ],
+            [
+                'title' => 'تصوير الفيديو',
+                'sub_title' => 'الانتاج المرئي',
+                'image' => 'projects/1.jpg'
+            ],
+        ];
+
+
+        foreach ($projects as $project) {
+
+            Project::updateOrCreate([
+                'title' => $project['title'],
+                'sub_title' => $project['sub_title'],
+                'image' => $project['image'],
+                'description' => "",
+            ], $project);
+        }
 
         foreach ($partners as $partner) {
 
