@@ -18,7 +18,7 @@ class CreateProjectsTable extends Migration
             $table->text('title');
             $table->text('sub_title');
             // $table->text('short_description');
-            $table->longText('description');
+            $table->longText('description')->nullable();
             // $table->string('company');
             $table->string('image');
             $table->timestamps();
