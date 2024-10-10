@@ -34,7 +34,7 @@
                                 <a class="dropdown-item" href="{{ route("backend.$module_name.trashed") }}">
                                     <i class="fas fa-eye-slash"></i> View trash
                                 </a>
-                            </div> 
+                            </div>
                         </div>
                     </div> --}}
                 </div>
@@ -53,7 +53,7 @@
                                 <th>{{ __('labels.backend.contacts.fields.name') }}</th>
                                 <th>{{ __('labels.backend.contacts.fields.email') }}</th>
                                 <th>{{ __('labels.backend.contacts.fields.service') }}</th>
-                                <th>{{ __('labels.backend.contacts.fields.subject') }}</th>
+                                {{-- <th>{{ __('labels.backend.contacts.fields.subject') }}</th> --}}
                                 <th>{{ __('labels.backend.contacts.fields.message') }}</th>
                                 <th class="text-right">{{ __('labels.backend.action') }}</th>
                             </tr>
@@ -103,7 +103,7 @@
             {data: 'name', name: 'name'},
             {data: 'email', name: 'email'},
             {data: 'service', name: 'service'},
-            {data: 'subject', name: 'subject'},
+            // {data: 'subject', name: 'subject'},
             {data: 'message', name: 'message'},
             {data: 'action', name: 'action', orderable: false, searchable: false}
         ]

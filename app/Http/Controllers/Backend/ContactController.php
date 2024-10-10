@@ -3,30 +3,30 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Authorizable;
-use App\Events\Backend\UserProfileUpdated;
-use App\Events\Backend\UserUpdated;
-use App\Exceptions\GeneralException;
 use App\Helpers\Constant;
 use App\Helpers\FileHelper;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use App\Models\Permission;
 use App\Models\Role;
-use App\Models\User;
 use App\Models\Userprofile;
-use App\Models\UserProvider;
 use App\Rules\ArrayWithKeys;
 use Carbon\Carbon;
-use Flash;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Laracasts\Flash\Flash;
 use Log;
 use Yajra\DataTables\DataTables;
 
 class ContactController extends Controller
 {
     use Authorizable;
+
+    public $module_title = "";
+    public $module_name = "";
+    public $module_path = "";
+    public $module_icon = "";
+    public $module_model = "";
 
     public function __construct()
     {
@@ -46,11 +46,6 @@ class ContactController extends Controller
         $this->module_model = "App\Models\Contact";
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
     public function index()
     {
         $module_title = $this->module_title;
@@ -78,7 +73,7 @@ class ContactController extends Controller
         $module_name = $this->module_name;
         $module_model = $this->module_model;
 
-        $$module_name = $module_model::select('id', 'name', 'email','subject' ,'message','updated_at');
+        $$module_name = $module_model::select('id', 'name', 'email', 'phone', 'message', 'updated_at');
         $data = $$module_name;
 
         return Datatables::of(Contact::select('*'))
@@ -88,9 +83,9 @@ class ContactController extends Controller
                 return view('backend.includes.contact_actions', compact('module_name', 'data'));
             })
             ->editColumn('name', '<strong>{{$name}}</strong>')
-            ->addColumn('service', function ($row) {
-                return $row->service->name;
-            })
+            // ->addColumn('service', function ($row) {
+            //     return $row->service->name;
+            // })
             ->editColumn('updated_at', function ($data) {
                 $module_name = $this->module_name;
 
@@ -107,11 +102,6 @@ class ContactController extends Controller
             ->make(true);
     }
 
-    /**
-     * Select Options for Select 2 Request/ Response.
-     *
-     * @return Response
-     */
     public function index_list(Request $request)
     {
         $module_title = $this->module_title;
@@ -146,11 +136,6 @@ class ContactController extends Controller
         return response()->json($$module_name);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
     public function create()
     {
         $module_title = $this->module_title;
@@ -171,13 +156,6 @@ class ContactController extends Controller
         );
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $module_title = $this->module_title;
@@ -185,20 +163,26 @@ class ContactController extends Controller
 
         $module_action = 'Details';
 
+
         $data = $request->validate([
             'name' => ['required', 'min:3', 'max:191'],
-            'logo' => ['required', new ArrayWithKeys(Constant::OUR_LANGUAGES)],
-            'logo.*' => ['required', 'file', 'mimes:png,jpg,jpeg'],
+            'email' => ['required', 'min:3', 'max:191'],
+            'phone' => ['required', 'min:3', 'max:10'],
+            'service' => ['required', 'min:3', 'max:191'],
+            'message' => ['required', 'min:3', 'max:350'],
+            // 'logo' => ['required', new ArrayWithKeys(Constant::OUR_LANGUAGES)],
+            // 'logo.*' => ['required', 'file', 'mimes:png,jpg,jpeg'],
         ]);
 
-        if (isset($data['logo']) && count($data['logo'])) {
-            $data['logo']['en'] = FileHelper::uploadFile($data['logo']['en'], 'contacts');
-            $data['logo']['ar'] = FileHelper::uploadFile($data['logo']['ar'], 'contacts');
-        }
-        Contact::create($data);
-        Flash::success('<i class="fas fa-check"></i> '. __('response.created_Successfully'))->important();
+        // if (isset($data['logo']) && count($data['logo'])) {
+        //     $data['logo']['en'] = FileHelper::uploadFile($data['logo']['en'], 'contacts');
+        //     $data['logo']['ar'] = FileHelper::uploadFile($data['logo']['ar'], 'contacts');
+        // }
 
-        return redirect("admin/$module_name");
+        Contact::create($data);
+        Flash::success('<i class="fas fa-check"></i> ' . __('response.created_Successfully'))->important();
+
+        return redirect("ar/admin/$module_name");
     }
 
     /**
@@ -295,7 +279,7 @@ class ContactController extends Controller
 
         $$module_name_singular->update($data);
 
-        Flash::success('<i class="fas fa-check"></i> '. __('response.update_Successfully'))->important();
+        Flash::success('<i class="fas fa-check"></i> ' . __('response.update_Successfully'))->important();
 
         return redirect("admin/$module_name");
     }
@@ -324,5 +308,4 @@ class ContactController extends Controller
 
         return redirect("admin/$module_name");
     }
-
 }

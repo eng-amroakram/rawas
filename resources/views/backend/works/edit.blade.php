@@ -38,13 +38,13 @@
 
             <div class="row mt-4">
                 <div class="col">
-                    {{ html()->modelForm($project, 'PATCH', route('backend.projects.update', $project->id))->class('form-horizontal')->attribute('enctype', 'multipart/form-data')->open() }}
+                    {{ html()->modelForm($work, 'PATCH', route('backend.works.update', $work->id))->class('form-horizontal')->attribute('enctype', 'multipart/form-data')->open() }}
 
                     <div class="form-group row">
                         {{ html()->label(__('labels.backend.projects.fields.title'))->class('col-sm-2 form-control-label')->for('title') }}
 
                         <div class="col-sm-10">
-                            {{ html()->text('title')->class('form-control')->value($project->title)->placeholder(__('labels.backend.projects.fields.title'))->attribute('maxlength', 191)->required() }}
+                            {{ html()->text('title')->class('form-control')->value($work->title)->placeholder(__('labels.backend.projects.fields.title'))->attribute('maxlength', 191)->required() }}
                         </div>
                     </div>
 
@@ -52,14 +52,14 @@
                         {{ html()->label(__('labels.backend.projects.fields.sub_title'))->class('col-sm-2 form-control-label')->for('sub_title') }}
 
                         <div class="col-sm-10">
-                            {{ html()->text('sub_title')->class('form-control')->value($project->sub_title)->placeholder(__('labels.backend.projects.fields.sub_title'))->attribute('maxlength', 191)->required() }}
+                            {{ html()->text('sub_title')->class('form-control')->value($work->sub_title)->placeholder(__('labels.backend.projects.fields.sub_title'))->attribute('maxlength', 191)->required() }}
                         </div>
                     </div>
 
                     <div class="form-group row">
                         {{ html()->label(__('labels.backend.projects.fields.description'))->class('col-sm-2 form-control-label')->for('description') }}
                         <div class="col-sm-10">
-                            {{ html()->textarea('description')->class('form-control')->value($project->description)->placeholder(__('labels.backend.projects.fields.description'))->attribute('maxlength', 1000)->required() }}
+                            {{ html()->textarea('description')->class('form-control')->value($work->description)->placeholder(__('labels.backend.projects.fields.description'))->attribute('maxlength', 1000)->required() }}
                         </div>
                     </div>
 
@@ -69,8 +69,26 @@
                             {{ html()->file('image')->class('form-control')->attribute('id', 'image')->required(false) }}
 
                             <!-- Current Arabic Logo Preview -->
-                            <img id="image_preview" src="{{ asset('storage/' . $project->image) }}" alt="Image"
+                            <img id="image_preview" src="{{ asset('storage/' . $work->image) }}" alt="Image"
                                 style="max-width: 200px; display:block; margin-top: 10px;" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group row">
+                                {!! Form::label('images', 'صور اخرى للعمل') !!} {!! fielf_required('required') !!}
+                                <div class="input-group mb-3">
+                                    {{ html()->file('images[]')->multiple()->class('form-control')->attribute('multiple') }}
+
+                                </div>
+
+                                @foreach ($work->images as $image)
+                                    <img id="image_preview" src="{{ asset('storage/' . $image) }}" alt="Image"
+                                        style="max-width: 200px; display:block; margin-top: 10px;" />
+                                @endforeach
+
+                            </div>
                         </div>
                     </div>
 
@@ -92,8 +110,8 @@
             <div class="row">
                 <div class="col">
                     <small class="float-right text-muted">
-                        Updated: {{ $project->updated_at->diffForHumans() }},
-                        Created at: {{ $project->created_at->isoFormat('LLLL') }}
+                        Updated: {{ $work->updated_at->diffForHumans() }},
+                        Created at: {{ $work->created_at->isoFormat('LLLL') }}
                     </small>
                 </div>
             </div>

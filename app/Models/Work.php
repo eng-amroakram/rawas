@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use App\Authorizable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Work extends Model
 {
     use HasFactory;
+    use Authorizable;
 
     protected $fillable = [
         'title',
@@ -15,6 +17,11 @@ class Work extends Model
         'description',
         'image',
         'images',
+        'project_id',
+    ];
+
+    protected $casts = [
+        'images' => 'array',
     ];
 
     public function project()

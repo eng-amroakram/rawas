@@ -41,43 +41,60 @@
                     <div class="col-3"></div>
                     <div class="offset-xl-1 col-xl-6 col-lg-6">
                         <div class="tp-contact-details-form mb-40">
-                            <form action="#">
+                            @include('flash::message')
+
+                            <!-- Errors block -->
+                            @include('backend.includes.errors')
+                            <!-- / Errors block -->
+
+                            <form action="{{ route('backend.contacts.store') }}" method="POST"
+                                enctype="multipart/form-data">
+
+                                @csrf
                                 <div class="row">
+
                                     <div class="col-lg-12">
                                         <div class="tp-contact-details-form-input mb-20">
-                                            <input type="text" placeholder="الاول">
+                                            <input type="text" name="name" placeholder="الاسم" required>
                                             <span><i class="fa-light fa-user"></i></span>
                                         </div>
                                     </div>
 
                                     <div class="col-lg-12">
                                         <div class="tp-contact-details-form-input mb-20">
-                                            <input type="text" placeholder="البريد الالكتروني">
+                                            <input type="email" name="email" placeholder="البريد الالكتروني" required>
                                             <span><i class="fa-light fa-envelope"></i></span>
                                         </div>
                                     </div>
+
                                     <div class="col-lg-12">
                                         <div class="tp-contact-details-form-input mb-20">
-                                            <input type="text" placeholder="رقم الجوال">
+                                            <input type="tel" name="phone" placeholder="رقم الجوال" required>
                                             <span><i class="fa-light fa-phone"></i></span>
                                         </div>
                                     </div>
+
                                     <div class="col-lg-12">
                                         <div class="tp-contact-details-form-input mb-20">
-                                            <input type="text" placeholder="الخدمة المطلوبة">
+                                            {{-- <select name="service_id" class="select">
+                                                @foreach ($services as $service)
+                                                    <option value="{{ $service->id }}">{{ $service->name }}</option>
+                                                @endforeach
+                                            </select> --}}
+                                            <input type="text" name="service" placeholder="الخدمة المطلوبة" required>
                                             <span><i class="fa-light fa-user"></i></span>
                                         </div>
                                     </div>
 
                                     <div class="col-lg-12">
                                         <div class="tp-contact-details-form-input mb-20">
-                                            <textarea name="Message" placeholder="اكتب رسالتك هنا"></textarea>
+                                            <textarea name="message" placeholder="اكتب رسالتك هنا" required></textarea>
                                             <span><i class="fa-light fa-pen"></i></span>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="tp-contact-details-form-btn">
-                                            <button class="tp-btn">تقديم طلب</button>
+                                            <button type="submit" class="tp-btn">تقديم طلب</button>
                                         </div>
                                     </div>
                                 </div>

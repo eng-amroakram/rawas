@@ -167,10 +167,11 @@
                                                     <div class="tp-project-4-item-content">
                                                         <span>{{ $project->sub_title }}</span>
                                                         <h4 class="tp-project-4-title under-line-white"><a
-                                                                href="project-details.html">{{ $project->title }}</a></h4>
+                                                                href="{{ route('frontend.projects', $project->id) }}">{{ $project->title }}</a>
+                                                        </h4>
                                                     </div>
                                                     <div class="tp-project-4-arrow">
-                                                        <a href="project-details.html"><i
+                                                        <a href="{{ route('frontend.projects', $project->id) }}"><i
                                                                 class="fa-regular fa-arrow-right"></i></a>
                                                     </div>
                                                 </div>

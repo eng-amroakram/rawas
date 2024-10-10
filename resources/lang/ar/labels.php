@@ -121,12 +121,19 @@ return [
                 'name' => 'الأسم',
                 'email' => 'البريد الألكتروني',
                 'service' => 'الخدمة',
+                'phone' => 'الهاتف',
                 'subject' => 'الموضوع',
                 'message' => 'نص الرسالة',
                 'created_at' => 'أنشئ في',
                 'updated_at' => ' آخر تعديل',
             ],
 
+        ],
+        'works' => [
+            'fields'=>[
+                'title' => 'عنوان العمل',
+                'sub_title' => 'عنوان العمل الفرعي',
+            ]
         ],
         'projects' => [
             'index' => [
@@ -170,6 +177,7 @@ return [
                 'quote' => 'الأقتباس',
                 'quote_creator' => 'صاحب الأقتباس',
                 'image' => 'الصورة',
+                'images' => 'صور اخرى للمشروع',
                 'sliders' => 'شريط الصور',
                 'url_linkedin' => 'لينكد إن',
                 'profile_privecy' => 'خصوصية الملف الشخصي',
@@ -294,6 +302,7 @@ return [
             ],
 
         ],
+
         'settings' => [
             'index' => [
                 'action' => 'إجراء',

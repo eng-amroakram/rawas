@@ -42,12 +42,13 @@
                             <td>{{ $contact->email }}</td>
                         </tr>
                         <tr>
-                            <th>{{ __('labels.backend.contacts.fields.service') }}</th>
-                            <td>{{ $contact->service->name }}</td>
+                            <th>{{ __('labels.backend.contacts.fields.phone') }}</th>
+                            <td>{{ $contact->phone }}</td>
                         </tr>
                         <tr>
-                            <th>{{ __('labels.backend.contacts.fields.subject') }}</th>
-                            <td>{{ $contact->subject }}</td>
+                            <th>{{ __('labels.backend.contacts.fields.service') }}</th>
+                            {{-- <td>{{ $contact->service->name }}</td> --}}
+                            <td>{{ $contact->service }}</td>
                         </tr>
                         <tr>
                             <th>{{ __('labels.backend.contacts.fields.message') }}</th>

@@ -17,6 +17,8 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.'], function () {
 
     Route::get('/', [FrontendController::class, 'index'])->name('index');
     Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
+    Route::get('/projects/{project}', [FrontendController::class, 'projects'])->name('projects');
+    Route::get('/works/{work}', [FrontendController::class, 'work'])->name('work');
     // Route::get('home', 'FrontendController@index')->name('home');
     // Route::get('privacy', 'FrontendController@privacy')->name('privacy');
     // Route::get('terms', 'FrontendController@terms')->name('terms');

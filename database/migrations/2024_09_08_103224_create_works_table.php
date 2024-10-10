@@ -19,7 +19,8 @@ class CreateWorksTable extends Migration
             $table->text('sub_title');
             $table->longText('description');
             $table->text('image')->nullable();
-            $table->text('images')->nullable();
+            $table->json('images')->nullable();
+            $table->foreignId('project_id')->constrained('projects')->cascadeOnDelete();
             $table->timestamps();
         });
     }
