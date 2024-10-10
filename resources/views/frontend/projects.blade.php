@@ -59,7 +59,7 @@
 
                 </div>
 
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-12">
                         <div class="basic-pagination text-center mt-30">
                             <nav>
@@ -90,7 +90,7 @@
                             </nav>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
             </div>
         </section>
