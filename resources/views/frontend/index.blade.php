@@ -26,11 +26,13 @@
                                 <div class="tp-banner-5-btn">
                                     <a class="tp-btn-red" href="{{ route('frontend.contact') }}">سجل اهتمامك </a>
                                 </div>
-                                <div class="tp-banner-5-video d-flex align-items-center">
-                                    <a class="popup-video" href="https://www.youtube.com/watch?v=tUP5S4YdEJo"><i
-                                            class="flaticon-play"></i></a>
-                                    <span>{!! $settings['HERO_SECTION']['circle_text_ar'] !!}</span>
-                                </div>
+                                @if ($settings['GENERAL_SETTINGS']['video'])
+                                    <div class="tp-banner-5-video d-flex align-items-center">
+                                        <a class="popup-video" href="{{ $settings['GENERAL_SETTINGS']['video'] }}"><i
+                                                class="flaticon-play"></i></a>
+                                        <span>{!! $settings['HERO_SECTION']['circle_text_ar'] !!}</span>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     </div>

@@ -22,6 +22,7 @@ class SettingSeeder extends Seeder
             // ['name' => 'system_name_en', 'val' => 'text', 'type' => 'text', 'group' => 'GENERAL_SETTINGS',],
             ['name' => 'logo', 'val' => asset('img/preview.jpg'), 'type' => 'file', 'group' => 'GENERAL_SETTINGS',],
             ['name' => 'mail', 'val' => 'text', 'type' => '', 'group' => 'GENERAL_SETTINGS',],
+            ['name' => 'video', 'val' => 'text', 'type' => '', 'group' => 'GENERAL_SETTINGS',],
             ['name' => 'phone_number', 'val' => '+972599916672', 'type' => '', 'group' => 'GENERAL_SETTINGS',],
             ['name' => 'whatsapp_number', 'val' => 'text', 'type' => '', 'group' => 'GENERAL_SETTINGS',],
             ['name' => 'facebook_url', 'val' => 'text', 'type' => '', 'group' => 'GENERAL_SETTINGS',],
