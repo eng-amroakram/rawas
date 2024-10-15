@@ -47,8 +47,9 @@
                             <div class="tp-footer-widget tp-footer-col-4 mb-40 wow fadeInUp" data-wow-duration="1.4s"
                                 data-wow-delay="1s">
 
-                                <h4 class="tp-footer-widget-title mb-20">سجل اهتمامك </h4>
-
+                                <a href="{{ route('frontend.contact') }}">
+                                    <h4 class="tp-footer-widget-title mb-20">سجل اهتمامك </h4>
+                                </a>
 
                                 <div class="tp-footer-widget-content-list">
 
@@ -60,7 +61,7 @@
                                         <i class="fa-solid fa-envelope"></i> <a
                                             href="../../cdn-cgi/l/email-protection.html#d5a1b0b6afbab3b3bcb6b4bcb9b495b2b8b4bcb9fbb6bab8"><span
                                                 class="__cf_email__"
-                                                data-cfemail="b9cddcdac3d6dfdfd0dad8d0d5d8f9ded4d8d0d597dad6d4">[email&#160;protected]</span></a>
+                                                data-cfemail="b9cddcdac3d6dfdfd0dad8d0d5d8f9ded4d8d0d597dad6d4">{{ $settings['GENERAL_SETTINGS']['mail'] }}</span></a>
                                     </div>
                                     <div class="tp-footer-widget-content-list-item">
                                         <i class="fa-solid fa-location-dot"></i> <a href="#">
@@ -85,7 +86,6 @@
                         <div class="col-lg-6 col-md-5">
                             <div class="tp-footer-terms">
                                 <a href="#">تطوير شركة حلول</a>
-
                             </div>
                         </div>
                     </div>

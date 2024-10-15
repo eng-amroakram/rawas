@@ -15,7 +15,7 @@
                         <nav id="mobile-menu" class="tp-main-menu-content">
                             <ul class="tp-onepage-menu">
                                 <li class="has-dropdown">
-                                    <a href="#">الرئيسية</a>
+                                    <a href="{{ route('frontend.index') }}">الرئيسية</a>
 
                                 </li>
                                 <li><a href="#about-one-page">تعرف علينا</a></li>

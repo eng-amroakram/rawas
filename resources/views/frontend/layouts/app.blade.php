@@ -90,7 +90,7 @@
                 </div>
                 <div class="tp-main-menu-mobile"></div>
                 <div class="offcanvas__btn">
-                    <a href="contact.html" class="tp-btn">سجل اهتمامك</a>
+                    <a href="{{ route('frontend.contact') }}" class="tp-btn">سجل اهتمامك</a>
                 </div>
                 <div class="side-info-contact">
                     <span>للتواصل والاستفسار</span>
