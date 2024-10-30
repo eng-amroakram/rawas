@@ -211,6 +211,11 @@ class FrontendController extends Controller
         //     $data['logo']['ar'] = FileHelper::uploadFile($data['logo']['ar'], 'contacts');
         // }
 
+
+        $data['email'] = "null";
+        $data['service'] = "null";
+        $data['message'] = "null";
+
         Contact::create($data);
         Flash::success('<i class="fas fa-check"></i> ' . __('response.created_Successfully'))->important();
 
