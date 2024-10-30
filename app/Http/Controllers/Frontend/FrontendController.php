@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Contact;
 use App\Models\Partner;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\Setting;
 use App\Models\Work;
+use Illuminate\Http\Request;
+use Laracasts\Flash\Flash;
 
 class FrontendController extends Controller
 {
@@ -189,5 +192,29 @@ class FrontendController extends Controller
         $projects = Project::all();
 
         return view('frontend.works', compact('work', 'settings', 'projects'));
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'name' => ['required', 'min:3', 'max:191'],
+            'email' => ['min:3', 'max:191'],
+            'phone' => ['required', 'min:3', 'max:10'],
+            'service' => ['min:3', 'max:191'],
+            'message' => ['min:3', 'max:350'],
+            // 'logo' => ['required', new ArrayWithKeys(Constant::OUR_LANGUAGES)],
+            // 'logo.*' => ['required', 'file', 'mimes:png,jpg,jpeg'],
+        ]);
+
+        // if (isset($data['logo']) && count($data['logo'])) {
+        //     $data['logo']['en'] = FileHelper::uploadFile($data['logo']['en'], 'contacts');
+        //     $data['logo']['ar'] = FileHelper::uploadFile($data['logo']['ar'], 'contacts');
+        // }
+
+        Contact::create($data);
+        Flash::success('<i class="fas fa-check"></i> ' . __('response.created_Successfully'))->important();
+
+        return redirect()->back();
+        // return redirect("ar/admin/$module_name");
     }
 }

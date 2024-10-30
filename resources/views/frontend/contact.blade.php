@@ -47,7 +47,7 @@
                             @include('backend.includes.errors')
                             <!-- / Errors block -->
 
-                            <form action="{{ route('backend.contacts.store') }}" method="POST"
+                            <form action="{{ route('frontend.contact.store') }}" method="POST"
                                 enctype="multipart/form-data">
 
                                 @csrf
