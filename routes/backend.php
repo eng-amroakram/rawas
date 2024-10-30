@@ -49,7 +49,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'backend.',
     Route::get("$module_name/index_data/{project}", ['as' => "$module_name.index_data", 'uses' => "$controller_name@index_data"]);
     Route::get("works/create/{project}", [WorkController::class, 'create'])->name('projects.works.create');
     // Route::get("$module_name/index_list", ['as' => "$module_name.index_list", 'uses' => "$controller_name@index_list"]);
-    Route::resource($module_name, $controller_name);
+    Route::resource($module_name, $controller_name)->withoutMiddleware(['auth']);
 
     // Partners Resources
     $module_name = 'partners';
