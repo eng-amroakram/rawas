@@ -166,10 +166,10 @@ class ContactController extends Controller
 
         $data = $request->validate([
             'name' => ['required', 'min:3', 'max:191'],
-            'email' => ['required', 'min:3', 'max:191'],
+            'email' => ['min:3', 'max:191'],
             'phone' => ['required', 'min:3', 'max:10'],
-            'service' => ['required', 'min:3', 'max:191'],
-            'message' => ['required', 'min:3', 'max:350'],
+            'service' => ['min:3', 'max:191'],
+            'message' => ['min:3', 'max:350'],
             // 'logo' => ['required', new ArrayWithKeys(Constant::OUR_LANGUAGES)],
             // 'logo.*' => ['required', 'file', 'mimes:png,jpg,jpeg'],
         ]);

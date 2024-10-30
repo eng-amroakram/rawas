@@ -62,7 +62,7 @@
 
                                     <div class="col-lg-12">
                                         <div class="tp-contact-details-form-input mb-20">
-                                            <input type="email" name="email" placeholder="البريد الالكتروني" required>
+                                            <input type="email" name="email" placeholder="البريد الالكتروني">
                                             <span><i class="fa-light fa-envelope"></i></span>
                                         </div>
                                     </div>
@@ -81,14 +81,14 @@
                                                     <option value="{{ $service->id }}">{{ $service->name }}</option>
                                                 @endforeach
                                             </select> --}}
-                                            <input type="text" name="service" placeholder="الخدمة المطلوبة" required>
+                                            <input type="text" name="service" placeholder="الخدمة المطلوبة">
                                             <span><i class="fa-light fa-user"></i></span>
                                         </div>
                                     </div>
 
                                     <div class="col-lg-12">
                                         <div class="tp-contact-details-form-input mb-20">
-                                            <textarea name="message" placeholder="اكتب رسالتك هنا" required></textarea>
+                                            <textarea name="message" placeholder="اكتب رسالتك هنا"></textarea>
                                             <span><i class="fa-light fa-pen"></i></span>
                                         </div>
                                     </div>
