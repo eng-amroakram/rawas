@@ -182,6 +182,8 @@ class ContactController extends Controller
         Contact::create($data);
         Flash::success('<i class="fas fa-check"></i> ' . __('response.created_Successfully'))->important();
 
+        dd("Test");
+
         return redirect()->back();
         // return redirect("ar/admin/$module_name");
     }
